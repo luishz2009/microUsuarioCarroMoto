@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: microservice-user
+  config:
+    import: optional:configserver:http://localhost:8888
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=bd_users;encrypt=true;trustServerCertificate=true;
+    username: sa
+    password: serway2009
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: SQL_SERVER
+    database-platform: org.hibernate.dialect.SQLServerDialect
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
