@@ -1,6 +1,6 @@
-package com.microservice.user.entity;
+package com.microservice.user.dto;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,17 +10,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "users")
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+public class UsuarioDTO {
+
     private Integer id;
     private String name;
-
-    @Column(name = "last_name")
     private String lastName;
     private String email;
-
 }
