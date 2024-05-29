@@ -2,18 +2,15 @@ package com.microservice.user.controller;
 
 import com.microservice.user.client.CarroClient;
 import com.microservice.user.client.MotoClient;
-import com.microservice.user.dto.CarroDTO;
 import com.microservice.user.dto.UsuarioDTO;
 import com.microservice.user.entity.Usuario;
 import com.microservice.user.exceptions.UsuarioNotFoundException;
-import com.microservice.user.http.response.CarrosByUsuarioResponse;
 import com.microservice.user.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.nio.channels.ScatteringByteChannel;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
