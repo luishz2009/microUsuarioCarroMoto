@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.nio.channels.ScatteringByteChannel;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -81,6 +82,11 @@ public class UsuarioController {
     @GetMapping("/findMotosByUsuarioId/{idUsuario}")
     public ResponseEntity<?> findAllMotosByUsuarioId(@PathVariable Integer idUsuario){
         return ResponseEntity.ok(usuarioService.findAllMotosByUsuarioId(idUsuario));
+    }
+    @GetMapping("/allVehiclesByUSer/{idUsuario}")
+    public ResponseEntity<Map<String, Object>> getCarrosAndMotosByUsuarioId(@PathVariable Integer idUsuario){
+        Map<String, Object> resultado = usuarioService.getCarrosAndMotosByUsuarioId(idUsuario);
+        return ResponseEntity.ok(resultado);
     }
 
     @ExceptionHandler(UsuarioNotFoundException.class)

@@ -12,7 +12,9 @@ import com.microservice.user.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UsuarioServiceImpl implements IUsuarioService{
@@ -91,5 +93,32 @@ public class UsuarioServiceImpl implements IUsuarioService{
                 .motoDTOList(motoDTOList)
                 .build();
 
+    }
+
+    @Override
+    public Map<String, Object> getCarrosAndMotosByUsuarioId(Integer idUsuario) {
+        Map<String, Object> resultado = new HashMap<>();
+        Usuario usuario = usuarioRepository.findById(idUsuario).orElseThrow(() -> new UsuarioNotFoundException("Usuario no encontrado con el id "+ idUsuario));
+
+        if (usuario == null){
+            resultado.put("Mensaje", "El usuario no existe");
+            return resultado;
+        }
+        resultado.put("usuario", usuario);
+
+        List<CarroDTO> carroDTOList = carroClient.findAllCarrosByUsuarioId(idUsuario);
+        if (carroDTOList.isEmpty()){
+            resultado.put("Mensaje", "El usuario no tiene carros");
+        }else {
+            resultado.put("Carros", carroDTOList);
+        }
+
+        List<MotoDTO> motoDTOList = motoClient.findAllMotosByUsuarioId(idUsuario);
+        if (motoDTOList.isEmpty()){
+            resultado.put("Mensaje", "El usuario no tiene motos");
+        }else {
+            resultado.put("Motos", motoDTOList);
+        }
+        return resultado;
     }
 }
