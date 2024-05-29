@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UsuarioDTO {
 
-    private Integer id;
     private String name;
     private String lastName;
     private String email;
