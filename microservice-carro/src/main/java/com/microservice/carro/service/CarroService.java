@@ -12,8 +12,9 @@ public interface CarroService {
 
     void save(Carro carro);
 
-    List<Carro> findAllByIdUsuario(int id);
+    List<Carro> findAllCarrosByIdUsuario(Integer idUsuario);
 
     void deleteById(int id);
 
+    void deleteAllCarrosByUsuarioId(Integer idUsuario);
 }

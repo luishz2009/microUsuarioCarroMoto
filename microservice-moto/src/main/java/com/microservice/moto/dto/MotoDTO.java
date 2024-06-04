@@ -1,4 +1,4 @@
-package com.microservice.user.dto;
+package com.microservice.moto.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CarroDTO {
+public class MotoDTO {
 
+    private Integer id;
     private String marca;
     private String modelo;
     private int usuarioId;

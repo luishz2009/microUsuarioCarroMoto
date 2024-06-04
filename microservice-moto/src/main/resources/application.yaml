@@ -1,25 +1,33 @@
-server:
-  port: 8083
+#Para trabajar con el config-server
 spring:
   application:
     name: microservice-moto
   config:
     import: optional:configserver:http://localhost:8888
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/bd_motos
-    username: postgres
-    password: serway2009
-  jpa:
-    hibernate:
-      ddl-auto: create
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+#Para trabajar con eureka y gateway
+#server:
+#  port: 8083
+#spring:
+#  application:
+#    name: microservice-moto
+#  config:
+#    import: optional:configserver:http://localhost:8888
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/bd_motos
+#    username: postgres
+#    password: serway2009
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    database: postgresql
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
 

@@ -1,18 +1,21 @@
-package com.microservice.user.dto;
+package com.microservice.user.http.response;
 
-import jakarta.persistence.Column;
+import com.microservice.user.dto.CarroDTO;
+import com.microservice.user.dto.MotoDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsuarioDTO {
-
+public class MotosByUsuarioResponse {
     private String name;
     private String lastName;
     private String email;
+    private List<MotoDTO> motoDTOList;
 }

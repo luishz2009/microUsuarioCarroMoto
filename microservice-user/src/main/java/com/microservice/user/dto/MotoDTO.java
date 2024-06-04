@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CarroDTO {
+public class MotoDTO {
 
     private String marca;
     private String modelo;
