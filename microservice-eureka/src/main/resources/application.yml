@@ -1,16 +1,25 @@
-server:
-  port: 8761
+#Para trabajar con el config-server
 spring:
   application:
     name: microservice-eureka
   config:
     import: optional:configserver:http://localhost:8888
 
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    server-url:
-      defaultZone: http://localhost:${server.port}/eureka/
+#Para trabajar sin el config-server
+#server:
+#  port: 8761
+#spring:
+#  application:
+
+#    name: microservice-eureka
+#  config:
+#    import: optional:configserver:http://localhost:8888
+#
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+#    server-url:
+#      defaultZone: http://localhost:${server.port}/eureka/
