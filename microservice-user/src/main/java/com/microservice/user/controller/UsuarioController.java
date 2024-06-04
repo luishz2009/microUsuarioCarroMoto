@@ -28,6 +28,10 @@ public class UsuarioController {
     @Autowired
     MotoClient motoClient;
 
+    public UsuarioController(IUsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void saveUser(@RequestBody Usuario usuario){
